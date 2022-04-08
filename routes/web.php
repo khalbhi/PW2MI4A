@@ -42,9 +42,10 @@ Route::get("/fakultas", function(){
 })->name("prodi");*/
 
 use App\Http\Controllers\ProdiController;
-Route::get("/prodi", [ProdiController::class, "index"])->name("prodi");
+use App\Http\Controllers\MahasiswaController;
 
-//buat halaman detail prodi
-//arahkan ke controller prodi, pada method detail
-//kirim parameter id prodi ke method detail
+Route::get("/prodi", [ProdiController::class, "index"])->name("prodi");
 Route::get("/prodi/detail/{id?}", [ProdiController::class, "detail"]);
+
+Route::get("/mahasiswa", [MahasiswaController::class, "index"]);
+Route::get("/mahasiswa/detail/{id}", [MahasiswaController::class, "detail"])->name('detailmhs');
