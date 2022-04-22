@@ -7,7 +7,7 @@
     <h1>Program Studi</h1>
     @if(count($prodi) > 0 )
         @foreach($prodi as $item)
-            <li>{{ $item }}</li>
+            <li>{{ $item->nama }} {{ $item->fakultas->nama }}</li>
         @endforeach
     @else
         Program Studi tidak ditemukan
